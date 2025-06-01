@@ -10,7 +10,7 @@ java {
 }
 
 application {
-    mainClass = 'tictactoe.Program'
+    mainClass = 'tictactoe.Application'
 }
 
 repositories {
