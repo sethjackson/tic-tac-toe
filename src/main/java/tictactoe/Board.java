@@ -24,9 +24,7 @@ public class Board {
     }
 
     public void makeMove(int position, Side side) {
-        Objects.requireNonNull(side);
-
-        pieces[position] = side;
+        pieces[position] = Objects.requireNonNull(side);
     }
 
     public void undoMove(int position) {

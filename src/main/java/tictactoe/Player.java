@@ -6,9 +6,7 @@ public abstract class Player {
     private final Side side;
 
     protected Player(Side side) {
-        Objects.requireNonNull(side);
-
-        this.side = side;
+        this.side = Objects.requireNonNull(side);
     }
 
     public Side getSide() {

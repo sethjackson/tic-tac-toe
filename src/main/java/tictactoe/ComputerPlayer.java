@@ -8,9 +8,7 @@ public class ComputerPlayer extends Player {
     public ComputerPlayer(Side side, MoveGenerator moveGenerator) {
         super(side);
 
-        Objects.requireNonNull(moveGenerator);
-
-        this.moveGenerator = moveGenerator;
+        this.moveGenerator = Objects.requireNonNull(moveGenerator);
     }
 
     public int getMove(Board board) {

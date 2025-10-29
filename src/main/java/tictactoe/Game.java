@@ -99,9 +99,7 @@ public class Game {
     }
 
     public void addGameStateChangedListener(GameStateChangedListener listener) {
-        Objects.requireNonNull(listener);
-
-        gameStateChangedListeners.add(listener);
+        gameStateChangedListeners.add(Objects.requireNonNull(listener));
     }
 
     public Board getBoard() {
