@@ -51,7 +51,7 @@ public class MainWindow extends JFrame {
         });
 
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.APP_QUIT_HANDLER)) {
-            Desktop.getDesktop().setQuitHandler((e, response) -> {
+            Desktop.getDesktop().setQuitHandler((_, response) -> {
                 if (canQuit()) {
                     response.performQuit();
                 } else {
@@ -75,13 +75,13 @@ public class MainWindow extends JFrame {
 
         var newGameMenuItem = new JMenuItem("New");
         newGameMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()));
-        newGameMenuItem.addActionListener(action -> newGame());
+        newGameMenuItem.addActionListener(_ -> newGame());
         gameMenu.add(newGameMenuItem);
 
         if (!(Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.APP_QUIT_STRATEGY))) {
             var quitMenuItem = new JMenuItem("Quit");
             quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()));
-            quitMenuItem.addActionListener(action -> {
+            quitMenuItem.addActionListener(_ -> {
                 if (canQuit()) {
                     System.exit(0);
                 }
@@ -95,13 +95,13 @@ public class MainWindow extends JFrame {
 
         undoMoveMenuItem = new JMenuItem("Undo");
         undoMoveMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()));
-        undoMoveMenuItem.addActionListener(action -> undoMove());
+        undoMoveMenuItem.addActionListener(_ -> undoMove());
         undoMoveMenuItem.setEnabled(false);
         moveMenu.add(undoMoveMenuItem);
 
         redoMoveMenuItem = new JMenuItem("Redo");
         redoMoveMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx() | InputEvent.SHIFT_DOWN_MASK));
-        redoMoveMenuItem.addActionListener(action -> redoMove());
+        redoMoveMenuItem.addActionListener(_ -> redoMove());
         redoMoveMenuItem.setEnabled(false);
         moveMenu.add(redoMoveMenuItem);
 
@@ -179,8 +179,8 @@ public class MainWindow extends JFrame {
         var xMoveGenerator = new JComboBox<>(moveGeneratorTypes.toArray());
         xMoveGenerator.setEnabled(false);
 
-        xHumanButton.addActionListener(action -> xMoveGenerator.setEnabled(xComputerButton.isSelected()));
-        xComputerButton.addActionListener(action -> xMoveGenerator.setEnabled(xComputerButton.isSelected()));
+        xHumanButton.addActionListener(_ -> xMoveGenerator.setEnabled(xComputerButton.isSelected()));
+        xComputerButton.addActionListener(_ -> xMoveGenerator.setEnabled(xComputerButton.isSelected()));
 
         xPanel.add(xMoveGenerator);
 
@@ -209,8 +209,8 @@ public class MainWindow extends JFrame {
         var oMoveGenerator = new JComboBox<>(moveGeneratorTypes.toArray());
         oMoveGenerator.setEnabled(false);
 
-        oHumanButton.addActionListener(action -> oMoveGenerator.setEnabled(oComputerButton.isSelected()));
-        oComputerButton.addActionListener(action -> oMoveGenerator.setEnabled(oComputerButton.isSelected()));
+        oHumanButton.addActionListener(_ -> oMoveGenerator.setEnabled(oComputerButton.isSelected()));
+        oComputerButton.addActionListener(_ -> oMoveGenerator.setEnabled(oComputerButton.isSelected()));
 
         oPanel.add(oMoveGenerator);
 
