@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Board {
-    private static final int[][] WINNERS = {
+    public static final int[][] WINNERS = {
         {0, 1, 2},
         {3, 4, 5},
         {6, 7, 8},
@@ -24,15 +24,31 @@ public class Board {
     }
 
     public void makeMove(int position, Side side) {
+        if (position < 0 || position > 8) {
+            throw new IndexOutOfBoundsException("Invalid position");
+        }
+
         pieces[position] = Objects.requireNonNull(side);
     }
 
     public void undoMove(int position) {
+        if (position < 0 || position > 8) {
+            throw new IndexOutOfBoundsException("Invalid position");
+        }
+
         pieces[position] = null;
     }
 
     public Side[] getPieces() {
         return pieces;
+    }
+
+    public boolean hasPiece(int position) {
+        if (position < 0 || position > 8) {
+            throw new IndexOutOfBoundsException("Invalid position");
+        }
+
+        return pieces[position] != null;
     }
 
     public List<Integer> getAvailableMoves() {

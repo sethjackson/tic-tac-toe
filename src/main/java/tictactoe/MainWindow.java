@@ -150,6 +150,7 @@ public class MainWindow extends JFrame {
 
         var moveGeneratorTypes = List.of(
             new NegamaxMoveGenerator(),
+            new RuleBasedMoveGenerator(),
             new RandomMoveGenerator()
         );
 
