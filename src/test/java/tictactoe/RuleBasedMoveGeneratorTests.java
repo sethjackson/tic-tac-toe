@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class RuleBasedMoveGeneratorTest {
+public class RuleBasedMoveGeneratorTests {
     @Test
     public void shouldThrowNullPointerExceptionWhenBoardIsNull() {
         assertThrows(NullPointerException.class, () -> new RuleBasedMoveGenerator().getMove(null, Side.X));

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class GameTest {
+public class GameTests {
     @Test
     public void shouldThrowNullPointerExceptionWhenFirstPlayerIsNull() {
         assertThrows(NullPointerException.class, () -> new Game(null, new HumanPlayer(Side.O)));

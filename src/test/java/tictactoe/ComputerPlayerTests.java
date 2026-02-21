@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ComputerPlayerTest {
+public class ComputerPlayerTests {
     @Test
     public void shouldThrowNullPointerExceptionWhenMoveGeneratorIsNull() {
         assertThrows(NullPointerException.class, () -> new ComputerPlayer(Side.X, null));

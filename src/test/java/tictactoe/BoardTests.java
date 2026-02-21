@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BoardTest {
+public class BoardTests {
     @Test
     public void shouldSetupBoard() {
         var board = new Board();
