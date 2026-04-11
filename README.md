@@ -1,23 +1,16 @@
 # Tic-Tac-Toe
 
-[![Build Status](https://github.com/sethjackson/tic-tac-toe/workflows/ci/badge.svg)](https://github.com/sethjackson/tic-tac-toe)
-
 A tic-tac-toe game.
 
 
 ## Prerequisites
 
-* [Git](https://git-scm.com/)
-* JDK (>= 25)
+* A modern web browser
 
 
-## Running
+## Playing the game
 
-    $ git clone https://github.com/sethjackson/tic-tac-toe
-
-    $ cd tic-tac-toe
-
-    $ ./gradlew run
+Go [here](https://sethjackson.github.io/tic-tac-toe/) and start a new game.
 
 
 ## License
