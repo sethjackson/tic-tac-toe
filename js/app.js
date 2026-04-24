@@ -438,7 +438,6 @@ function gameStateChanged() {
 
     if (playerToMove instanceof ComputerPlayer) {
       const move = playerToMove.getMove(game.board);
-      console.log(move);
 
       game.makeMove(move);
 
