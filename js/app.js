@@ -362,7 +362,7 @@ function newGame() {
     o = new ComputerPlayer(Side.O, oMoveGenerator);
   }
 
-  window.game = new Game(x, o);
+  globalThis.game = new Game(x, o);
 
   document.getElementById('undo-button').addEventListener('click', undoMove);
   document.getElementById('redo-button').addEventListener('click', redoMove);
@@ -406,7 +406,7 @@ function getMoveGenerator(element) {
 }
 
 function gameStateChanged() {
-  const game = window.game;
+  const game = globalThis.game;
   if (!game) {
     return;
   }
@@ -447,7 +447,7 @@ function gameStateChanged() {
 }
 
 function showGameOverModal() {
-  const game = window.game;
+  const game = globalThis.game;
   if (!game) {
     return;
   }
@@ -461,7 +461,7 @@ function showGameOverModal() {
 }
 
 function undoMove() {
-  const game = window.game;
+  const game = globalThis.game;
   if (!game) {
     return;
   }
@@ -472,7 +472,7 @@ function undoMove() {
 }
 
 function redoMove() {
-  const game = window.game;
+  const game = globalThis.game;
   if (!game) {
     return;
   }
@@ -483,7 +483,7 @@ function redoMove() {
 }
 
 function makeMove() {
-  const game = window.game;
+  const game = globalThis.game;
   if (!game || game.isOver()) {
     return;
   }
