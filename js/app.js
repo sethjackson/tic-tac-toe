@@ -325,6 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('new-game-button').addEventListener('click', newGame);
   document.getElementById('x-player').addEventListener('change', playerSelectionChanged);
   document.getElementById('o-player').addEventListener('change', playerSelectionChanged);
+  document.getElementById('undo-button').addEventListener('click', undoMove);
+  document.getElementById('redo-button').addEventListener('click', redoMove);
 });
 
 function newGame() {
@@ -363,9 +365,6 @@ function newGame() {
   }
 
   globalThis.game = new Game(x, o);
-
-  document.getElementById('undo-button').addEventListener('click', undoMove);
-  document.getElementById('redo-button').addEventListener('click', redoMove);
 
   for (const cell of document.getElementsByClassName('cell')) {
     cell.addEventListener('click', makeMove);
